@@ -378,7 +378,13 @@
                 <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                 <input type="email" id="gmail" name="gmail" placeholder="Tu correo Gmail (ej: tunombre@gmail.com)" required>
                 <textarea id="comentario" name="comentario" placeholder="Escribe tu comentario..." required></textarea>
-                <button type="submit">Enviar comentario</button>
+                <button type="submit">Enviar comentario</button> 
+                <input type="hidden"
+       name="_subject"
+       value="Nuevo mensaje desde GitHub Pages">
+       <input type="hidden"
+       name="_captcha"
+       value="false">
             </form>
             <div id="form-status" class="form-status"></div>
             <div id="comments-list"></div>
