@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.disabled = true;
 
             // Enviar con EmailJS
-            emailjs.send('service_xg51rqe', 'template_cultidiomas', {
+            emailjs.send('service_xg51rqe', 'template_qnjgg5j', {
                 from_name:    nombre,
                 from_email:   gmail,
                 message:      comentario,
