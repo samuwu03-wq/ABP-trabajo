@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultidiomas — Aprendiendo de cultura e idiomas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos (2).css">
+</head>
+<body>
+
+    <!-- ===== LOGO SUPERIOR IZQUIERDO ===== -->
+    <div class="logo-top-left">
+        <img src="logo.png" alt="Cultidiomas Logo">
+    </div>
+
+    <!-- ===== PANEL LATERAL DESLIZABLE ===== -->
+    <div class="side-panel-overlay" id="sidePanelOverlay"></div>
+    <div class="side-panel" id="sidePanel">
+        <button class="side-panel-close" id="sidePanelClose" aria-label="Cerrar panel">✕</button>
+        <div class="side-panel-logo">Cultidiomas</div>
+        <nav class="side-panel-nav">
+            <a href="#nosotros" class="side-panel-link" data-section="nosotros">
+                <span class="side-panel-icon">🌍</span>
+                <span>Nosotros</span>
+            </a>
+            <a href="#planes" class="side-panel-link" data-section="planes">
+                <span class="side-panel-icon">📋</span>
+                <span>Planes</span>
+            </a>
+            <a href="#idiomas" class="side-panel-link" data-section="idiomas">
+                <span class="side-panel-icon">🗣️</span>
+                <span>Idiomas</span>
+            </a>
+            <a href="#profesores" class="side-panel-link" data-section="profesores">
+                <span class="side-panel-icon">👨‍🏫</span>
+                <span>Profesores</span>
+            </a>
+            <a href="#contacto" class="side-panel-link" data-section="contacto">
+                <span class="side-panel-icon">✉️</span>
+                <span>Contacto</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Botón para abrir el panel lateral -->
+    <button class="side-panel-toggle" id="sidePanelToggle" aria-label="Abrir menú">
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+    </button>
+
+    <!-- ===== HERO / CARRUSEL ===== -->
+    <section class="hero" id="inicio">
+        <div class="carousel" id="carousel">
+            <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1600&q=80')"></div>
+            <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80')"></div>
+            <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80')"></div>
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-tag">Educación & Cultura</div>
+            <h1 class="hero-title">Cultidiomas</h1>
+            <p class="hero-subtitle">Aprendiendo de cultura e idiomas una palabra a la vez</p>
+            <div class="hero-buttons">
+                <button class="hero-btn-primary" id="verPlanesBtn">Ver Planes</button>
+                <button class="hero-btn-secondary" id="verIdiomasBtn">Nuestros Idiomas</button>
+            </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots">
+            <button class="dot active" data-index="0"></button>
+            <button class="dot" data-index="1"></button>
+            <button class="dot" data-index="2"></button>
+        </div>
+
+        <button class="carousel-arrow left" id="carouselPrev">&#8249;</button>
+        <button class="carousel-arrow right" id="carouselNext">&#8250;</button>
+    </section>
+
+    <!-- ===== ESPACIO BLANCO CON NOSOTROS ===== -->
+    <section class="about-strip" id="nosotros">
+        <div class="about-strip-inner">
+            <div class="about-card">
+                <div class="about-card-icon">🕐</div>
+                <h3>Nuestra Historia</h3>
+                <div class="about-card-content">
+                    <p>Cultidiomas nació de la pasión por conectar personas con el mundo a través del lenguaje. Con años de experiencia formando estudiantes en múltiples idiomas, hemos construido una comunidad de aprendizaje que trasciende fronteras y culturas.</p>
+                </div>
+                <div class="about-card-footer">Haga clic para ver más</div>
+            </div>
+
+            <div class="about-card">
+                <div class="about-card-icon">📚</div>
+                <h3>Qué Hacemos</h3>
+                <div class="about-card-content">
+                    <p>Ofrecemos clases virtuales y presenciales en más de 15 idiomas, con profesionales nativos y certificados. Nuestra metodología combina cultura, gramática y práctica real para un aprendizaje efectivo y memorable.</p>
+                </div>
+                <div class="about-card-footer">Haga clic para ver más</div>
+            </div>
+
+            <div class="about-card">
+                <div class="about-card-icon">📋</div>
+                <h3>Nuestro Reglamento</h3>
+                <div class="about-card-content">
+                    <p>Trabajamos bajo estrictos estándares pedagógicos. Todos nuestros programas están diseñados por expertos en lingüística. Nuestro compromiso es brindar educación de excelencia con seguimiento personalizado.</p>
+                </div>
+                <div class="about-card-footer">Haga clic para ver más</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN PLANES ===== -->
+    <section class="planes-section page-section" id="planes">
+        <div class="section-header">
+            <span class="section-tag">Inversión en tu futuro</span>
+            <h2>Nuestros Planes</h2>
+            <p class="section-desc">Elige el plan que mejor se adapte a tus metas lingüísticas</p>
+        </div>
+
+        <div class="planes-grid">
+            <!-- Plan Normal -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <div class="plan-badge">Plan Normal</div>
+                    <div class="plan-emoji">🌱</div>
+                </div>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> Clases virtuales flexibles con profesionales</li>
+                    <li><span class="check">✓</span> Aprendizaje de múltiples idiomas <strong>Tipo A</strong></li>
+                    <li><span class="check">✓</span> Videos de las clases grabadas</li>
+                    <li><span class="check">✓</span> Atención personalizada</li>
+                </ul>
+                <div class="plan-btn-wrapper">
+                    <button class="plan-btn">Consultar</button>
+                </div>
+            </div>
+
+            <!-- Plan Avanzado -->
+            <div class="plan-card plan-card--featured">
+                <div class="plan-ribbon">Más Popular</div>
+                <div class="plan-header">
+                    <div class="plan-badge">Plan Avanzado</div>
+                    <div class="plan-emoji">🚀</div>
+                </div>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> Clases virtuales flexibles con profesionales</li>
+                    <li><span class="check">✓</span> Aprendizaje de múltiples idiomas <strong>Tipo A y Tipo B</strong></li>
+                    <li><span class="check">✓</span> Videos grabados, materiales didácticos y plataforma de aprendizaje interactivo</li>
+                    <li><span class="check">✓</span> Atención personalizada</li>
+                    <li><span class="check">✓</span> Uso del plan para un máximo de <strong>2 personas</strong></li>
+                </ul>
+                <div class="plan-btn-wrapper">
+                    <button class="plan-btn">Consultar</button>
+                </div>
+            </div>
+
+            <!-- Plan VIP -->
+            <div class="plan-card plan-card--vip">
+                <div class="plan-header">
+                    <div class="plan-badge">Plan VIP</div>
+                    <div class="plan-emoji">⭐</div>
+                </div>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> Clases virtuales con profesionales y <strong>viajes temporales a sedes</strong> para aprendizaje presencial y turismo cultural</li>
+                    <li><span class="check">✓</span> Aprendizaje de múltiples idiomas <strong>Tipo A, B y C</strong></li>
+                    <li><span class="check">✓</span> Videos grabados, materiales didácticos y plataforma interactiva</li>
+                    <li><span class="check">✓</span> Acceso a clases especiales con <strong>veteranos multilingües</strong> y expertos culturales</li>
+                    <li><span class="check">✓</span> Atención personalizada</li>
+                    <li><span class="check">✓</span> Uso familiar — máximo <strong>5 personas</strong></li>
+                </ul>
+                <div class="plan-btn-wrapper">
+                    <button class="plan-btn">Consultar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN IDIOMAS ===== -->
+    <section class="idiomas-section page-section" id="idiomas">
+        <div class="section-header">
+            <span class="section-tag">Catálogo lingüístico</span>
+            <h2>Nuestros Idiomas</h2>
+            <p class="section-desc">17 idiomas organizados por tiempo de aprendizaje</p>
+        </div>
+
+        <div class="idiomas-tipos">
+
+            <!-- Tipo A -->
+            <div class="tipo-bloque">
+                <div class="tipo-header tipo-a">
+                    <span class="tipo-label">Tipo A</span>
+                    <span class="tipo-desc">Idiomas disponibles en Plan Normal, Avanzado y VIP</span>
+                </div>
+                <div class="idiomas-grid">
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🇬🇧</div>
+                        <div class="idioma-info">
+                            <h4>Inglés</h4>
+                            <span class="idioma-tiempo">6 a 9 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🇫🇷</div>
+                        <div class="idioma-info">
+                            <h4>Francés</h4>
+                            <span class="idioma-tiempo">6 a 9 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🇪🇸</div>
+                        <div class="idioma-info">
+                            <h4>Español</h4>
+                            <span class="idioma-tiempo">6 a 9 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🇵🇹</div>
+                        <div class="idioma-info">
+                            <h4>Portugués</h4>
+                            <span class="idioma-tiempo">5 a 8 meses</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tipo B -->
+            <div class="tipo-bloque">
+                <div class="tipo-header tipo-b">
+                    <span class="tipo-label">Tipo B</span>
+                    <span class="tipo-desc">Idiomas disponibles en Plan Avanzado y VIP</span>
+                </div>
+                <div class="idiomas-grid">
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🇩🇪</div>
+                        <div class="idioma-info">
+                            <h4>Alemán</h4>
+                            <span class="idioma-tiempo">10 a 14 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🇷🇺</div>
+                        <div class="idioma-info">
+                            <h4>Ruso</h4>
+                            <span class="idioma-tiempo">12 a 16 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🏴</div>
+                        <div class="idioma-info">
+                            <h4>Catalán</h4>
+                            <span class="idioma-tiempo">6 a 10 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🇮🇹</div>
+                        <div class="idioma-info">
+                            <h4>Italiano</h4>
+                            <span class="idioma-tiempo">5 a 8 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🏛️</div>
+                        <div class="idioma-info">
+                            <h4>Latín</h4>
+                            <span class="idioma-tiempo">10 a 14 meses</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tipo C -->
+            <div class="tipo-bloque">
+                <div class="tipo-header tipo-c">
+                    <span class="tipo-label">Tipo C</span>
+                    <span class="tipo-desc">Idiomas exclusivos del Plan VIP</span>
+                </div>
+                <div class="idiomas-grid">
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🇨🇳</div>
+                        <div class="idioma-info">
+                            <h4>Chino y lenguas hermanas</h4>
+                            <span class="idioma-tiempo">24 a 30 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🇰🇷</div>
+                        <div class="idioma-info">
+                            <h4>Coreano</h4>
+                            <span class="idioma-tiempo">24 a 30 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🇮🇳</div>
+                        <div class="idioma-info">
+                            <h4>Hindi</h4>
+                            <span class="idioma-tiempo">18 a 24 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🌍</div>
+                        <div class="idioma-info">
+                            <h4>Suajili</h4>
+                            <span class="idioma-tiempo">18 a 24 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🇸🇦</div>
+                        <div class="idioma-info">
+                            <h4>Árabe</h4>
+                            <span class="idioma-tiempo">24 a 30 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🇪🇹</div>
+                        <div class="idioma-info">
+                            <h4>Amárico</h4>
+                            <span class="idioma-tiempo">20 a 28 meses</span>
+                        </div>
+                    </div>
+                    <div class="idioma-card">
+                        <div class="idioma-flag">🌺</div>
+                        <div class="idioma-info">
+                            <h4>Hawaiano</h4>
+                            <span class="idioma-tiempo">12 a 18 meses</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN PROFESORES ===== -->
+    <section class="profesores-section page-section" id="profesores">
+        <div class="section-header">
+            <span class="section-tag">Nuestro equipo</span>
+            <h2>Profesores</h2>
+            <p class="section-desc">Expertos nativos y certificados comprometidos con tu aprendizaje</p>
+        </div>
+        <div class="profesores-grid">
+            <div class="profesor-card">
+                <div class="profesor-avatar">👩‍🏫</div>
+                <h4>Instructores Nativos</h4>
+                <p>Profesores certificados hablantes nativos que transmiten la cultura desde adentro.</p>
+            </div>
+            <div class="profesor-card">
+                <div class="profesor-avatar">🎓</div>
+                <h4>Lingüistas Expertos</h4>
+                <p>Especialistas en filología y lingüística aplicada con metodologías modernas.</p>
+            </div>
+            <div class="profesor-card">
+                <div class="profesor-avatar">🌐</div>
+                <h4>Expertos Culturales</h4>
+                <p>Facilitadores que conectan el idioma con la identidad cultural de cada región.</p>
+            </div>
+            <div class="profesor-card">
+                <div class="profesor-avatar">🏆</div>
+                <h4>Veteranos Multilingües</h4>
+                <p>Poliglotas con experiencia en más de 5 idiomas que guían en niveles avanzados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMENTARIOS ===== -->
+    <section id="comentarios" class="comentarios-section">
+        <div class="section-header">
+            <span class="section-tag">Comunidad</span>
+            <h2>Comentarios</h2>
+        </div>
+        <div class="comentarios-inner">
+            <!-- ACTION: Reemplaza YOUR_FORM_ID con tu ID de Formspree -->
+            <form id="comment-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                <input type="email" id="gmail" name="gmail" placeholder="Tu correo Gmail (ej: tunombre@gmail.com)" required>
+                <textarea id="comentario" name="comentario" placeholder="Escribe tu comentario..." required></textarea>
+                <button type="submit">Enviar comentario</button>
+            </form>
+            <div id="form-status" class="form-status"></div>
+            <div id="comments-list"></div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER / CONTACTO ===== -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <div class="footer-logo">Cultidiomas</div>
+                <p>Aprendiendo de cultura e idiomas una palabra a la vez. Conectamos personas con el mundo a través del lenguaje.</p>
+                <div class="social-icons">
+                    <div class="social-icon">f</div>
+                    <div class="social-icon">📷</div>
+                    <div class="social-icon">💬</div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📞 Teléfono<br>+57 310 506 4716</p>
+                <p>✉️ Email<br>cultidiomas.oficial@gmail.com</p>
+                <p>📍 Dirección<br>Colombia - Barranquilla</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Horario de Atención</h3>
+                <div class="footer-schedule">
+                    <span>Lunes - Viernes:</span>
+                    <span>8:00 AM - 6:00 PM</span>
+                </div>
+                <div class="footer-schedule">
+                    <span>Sábado:</span>
+                    <span>8:00 AM - 2:00 PM</span>
+                </div>
+                <div class="footer-schedule">
+                    <span>Domingo:</span>
+                    <span>Cerrado</span>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <ul class="footer-nav">
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#planes">Planes</a></li>
+                    <li><a href="#idiomas">Idiomas</a></li>
+                    <li><a href="#profesores">Profesores</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Cultidiomas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
