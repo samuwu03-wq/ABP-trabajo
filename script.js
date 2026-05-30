@@ -209,39 +209,72 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('✅ Botones de planes configurados');
 
     // ==========================================
-    // 6. FORMULARIO DE COMENTARIOS
+    // 6. FORMULARIO DE COMENTARIOS — EmailJS
     // ==========================================
     var commentForm  = document.getElementById('comment-form');
     var commentsList = document.getElementById('comments-list');
+    var formStatus   = document.getElementById('form-status');
 
-    if (commentForm && commentsList) {
+    if (commentForm) {
         commentForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
             var nombre     = document.getElementById('nombre').value.trim();
+            var gmail      = document.getElementById('gmail').value.trim();
             var comentario = document.getElementById('comentario').value.trim();
 
-            if (!nombre || !comentario) return;
+            if (!nombre || !gmail || !comentario) return;
 
-            var commentDiv = document.createElement('div');
-            commentDiv.classList.add('comment', 'fade-up');
-            commentDiv.innerHTML =
-                '<strong>' + nombre + '</strong>' +
-                '<p>' + comentario + '</p>';
+            var submitBtn = commentForm.querySelector('button[type="submit"]');
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
 
-            commentsList.insertBefore(commentDiv, commentsList.firstChild);
+            // Enviar con EmailJS
+            emailjs.send('service_cultidiomas', 'template_cultidiomas', {
+                from_name:    nombre,
+                from_email:   gmail,
+                message:      comentario,
+                to_email:     'cultidiomas.oficial@gmail.com'
+            }).then(function () {
+                // Éxito — mostrar comentario en pantalla
+                if (commentsList) {
+                    var commentDiv = document.createElement('div');
+                    commentDiv.classList.add('comment', 'fade-up');
+                    commentDiv.innerHTML =
+                        '<strong>' + nombre + '</strong>' +
+                        '<span class="comment-email">' + gmail + '</span>' +
+                        '<p>' + comentario + '</p>';
+                    commentsList.insertBefore(commentDiv, commentsList.firstChild);
+                    requestAnimationFrame(function () {
+                        commentDiv.classList.add('visible');
+                    });
+                }
 
-            // Activar animación
-            requestAnimationFrame(function () {
-                commentDiv.classList.add('visible');
+                if (formStatus) {
+                    formStatus.textContent = '✅ ¡Comentario enviado correctamente!';
+                    formStatus.style.color = '#2e7d32';
+                    setTimeout(function () { formStatus.textContent = ''; }, 4000);
+                }
+
+                commentForm.reset();
+                submitBtn.textContent = 'Enviar comentario';
+                submitBtn.disabled = false;
+                console.log('✅ Correo enviado por EmailJS de:', nombre);
+
+            }, function (error) {
+                if (formStatus) {
+                    formStatus.textContent = '❌ Error al enviar. Intenta de nuevo.';
+                    formStatus.style.color = '#c62828';
+                    setTimeout(function () { formStatus.textContent = ''; }, 4000);
+                }
+                submitBtn.textContent = 'Enviar comentario';
+                submitBtn.disabled = false;
+                console.error('❌ Error EmailJS:', error);
             });
-
-            commentForm.reset();
-            console.log('✅ Comentario enviado de:', nombre);
         });
     }
 
-    console.log('✅ Formulario de comentarios configurado');
+    console.log('✅ Formulario de comentarios configurado con EmailJS');
 
     // ==========================================
     // 7. REDES SOCIALES — Animación de click
