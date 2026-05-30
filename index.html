@@ -374,18 +374,15 @@
         </div>
         <div class="comentarios-inner">
             <!-- ACTION: Reemplaza YOUR_FORM_ID con tu ID de Formspree -->
-            <form id="comment-form" action="https://formsubmit.co/cultidiomas.oficial@gmail.com" method="POST">
+           <form id="comment-form" action="https://api.web3forms.com/submit" method="POST">
     <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
     <input type="email" id="gmail" name="gmail" placeholder="Tu correo Gmail" required>
     <textarea id="comentario" name="comentario" placeholder="Escribe tu comentario..." required></textarea>
                 <input type="hidden" name="_next" value="https://samuwu03-wq.github.io/ABP-trabajo/">
                 <button type="submit">Enviar comentario</button> 
-                <input type="hidden"
-       name="_subject"
-       value="Nuevo mensaje desde GitHub Pages">
-       <input type="hidden"
-       name="_captcha"
-       value="false">
+               <input type="hidden" name="access_key" value="3267c820-c4ad-4965-9f60-25351d6c3e0e">
+<input type="hidden" name="subject" value="Nuevo comentario desde Cultidiomas">
+<input type="hidden" name="redirect" value="false">
             </form>
             <div id="form-status" class="form-status"></div>
             <div id="comments-list"></div>
