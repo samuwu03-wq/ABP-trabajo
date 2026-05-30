@@ -8,9 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos (2).css">
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>emailjs.init('2ASzcfM4DVYG4Pzx');</script>
 </head>
 <body>
 
@@ -377,7 +374,7 @@
         </div>
         <div class="comentarios-inner">
             <!-- ACTION: Reemplaza YOUR_FORM_ID con tu ID de Formspree -->
-           <form id="comment-form">
+            <form id="comment-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                 <input type="email" id="gmail" name="gmail" placeholder="Tu correo Gmail (ej: tunombre@gmail.com)" required>
                 <textarea id="comentario" name="comentario" placeholder="Escribe tu comentario..." required></textarea>
